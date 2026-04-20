@@ -8,7 +8,7 @@ app.use(express.json());
 
 // ===== 설정 =====
 const SECRET = "cash_secret_123";
-mongoose.connect("mongodb://127.0.0.1:27017/cashserver");
+mongoose.connect(process.env.MONGO_URI);
 
 // ===== DB =====
 const User = mongoose.model("User", {
